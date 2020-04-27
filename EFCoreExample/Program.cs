@@ -13,6 +13,8 @@ namespace EFCoreExample
             if (!context.Departments.Any())
                 AddData(context);
 
+            var x = 1;
+
             PredicateTest(context);
 
             ExpressionTest(context);
