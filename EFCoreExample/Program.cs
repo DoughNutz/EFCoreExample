@@ -22,6 +22,8 @@ namespace EFCoreExample
 
         private static void GroupByTest(OrganizationContext context)
         {
+            var z = 1;
+
             var departments = context.Departments.Where(dept => context.Departments.GroupBy(dept => dept.ReferenceId).Select(dept => new { UpdateDate = dept.Max(d => d.UpdateDate) }).Any(dept_in => dept_in.UpdateDate == dept.UpdateDate));
 
             var x = departments.ToList();
